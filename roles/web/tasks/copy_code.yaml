@@ -1,0 +1,14 @@
+---
+# These tasks are responsible for copying the latest dev/production code from the version control system.
+
+- name: Copy the code from repository
+  become: true
+  ansible.builtin.git:
+    clone: true
+    dest: "{{ repository_location }}"
+    repo: "{{ repository_url }}"
+    single_branch: true
+    update: true
+    version: "{{ repository_branch }}"
+  environment:
+    GIT_TERMINAL_PROMPT: 0

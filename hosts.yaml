@@ -1,0 +1,10 @@
+all:
+  children:
+    webservers:
+      hosts:
+        Web-VM-0:
+        Web-VM-1:
+        Web-VM-2:
+    databases:
+      hosts:
+        DB-VM-0:

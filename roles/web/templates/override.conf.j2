@@ -1,0 +1,12 @@
+[Service]
+Environment="PORT={{ weighttracker_port }}"
+Environment="HOST=0.0.0.0"
+Environment="PGHOST={{ postgres_host }}"
+Environment="PGPORT={{ postgres_port }}"
+Environment="PGPASSWORD={{ postgres_password }}"
+Environment="PGUSERNAME={{ postgres_username }}"
+Environment="HOST_URL=http://{{ public_host_name }}:{{ weighttracker_port }}"
+Environment="COOKIE_ENCRYPT_PWD={{ cookie_encrypt_pwd }}"
+Environment="OKTA_ORG_URL={{ okta_org_url }}"
+Environment="OKTA_CLIENT_ID={{ okta_client_id }}"
+Environment="OKTA_CLIENT_SECRET={{ okta_client_secret }}"

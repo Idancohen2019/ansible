@@ -1,0 +1,9 @@
+---
+
+volume_name: postgres_data
+postgres_password: "LSM(#Lsa'gfkaposla;a*(%s;lajKGSl"
+postgres_port: 5432
+postgres_user: "idan_db_user"
+
+service_name: weighttracker-db
+container_name: weighttracker_postgres

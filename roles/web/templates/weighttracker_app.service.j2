@@ -1,0 +1,30 @@
+[Unit]
+Description=Weighttracker app
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+RestartSec=10
+ExecStartPre=-/usr/bin/docker stop {{ docker_image }}
+ExecStartPre=-/usr/bin/docker rm {{ docker_image }}
+ExecStart=/usr/bin/docker run \
+--name {{ docker_image }} \
+--rm \
+--publish ${PORT}:${PORT} \
+--env PORT=${PORT} \
+--env HOST=${HOST} \
+--env PGHOST=${PGHOST} \
+--env PGPORT=${PGPORT} \
+--env PGUSERNAME=${PGUSERNAME} \
+--env PGPASSWORD=${PGPASSWORD} \
+--env HOST_URL=${HOST_URL} \
+--env COOKIE_ENCRYPT_PWD=${COOKIE_ENCRYPT_PWD} \
+--env OKTA_ORG_URL=${OKTA_ORG_URL} \
+--env OKTA_CLIENT_ID=${OKTA_CLIENT_ID} \
+--env OKTA_CLIENT_SECRET=${OKTA_CLIENT_SECRET} \
+{{ docker_image }}
+ExecStop=/usr/bin/docker stop {{ docker_image }}
+
+[Install]
+WantedBy=multi-user.target

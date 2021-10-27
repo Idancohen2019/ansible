@@ -1,0 +1,27 @@
+---
+# This playbook deploys the weighttrack application
+
+#- name: apply common configuration to all hosts
+#  gather_facts: false
+#  hosts:
+#    - webservers
+#    - databases
+#  roles:
+#    - docker
+
+- name: configure and deploy the webservers and application code
+  gather_facts: false
+  hosts:
+    - webservers
+
+  roles:
+    - docker
+    - web
+
+- name: Configure database
+  gather_facts: false
+  hosts:
+    - databases
+  roles:
+    - docker
+    - db

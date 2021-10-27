@@ -1,0 +1,7 @@
+---
+
+- name: Create docker volume
+  become: true
+  ansible.builtin.command:
+    cmd: "/usr/bin/docker volume create {{ volume_name }}"
+

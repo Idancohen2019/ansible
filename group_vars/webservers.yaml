@@ -1,0 +1,26 @@
+---
+# The variables file used by the playbooks in the webservers group.
+# These don't have to be explicitly imported by vars_files: they are autopopulated.
+#
+cookie_encrypt_pwd: "LKiskalJOF;lai340asl;mjfa';haldj7alKGFs;lO*%$SALa!"
+
+docker_image: "weighttracker_app"
+
+okta_client_id: "0oa1yr0xwhveJk3kr5d7"
+okta_client_secret: "fcPCYw1xHlc3EvskKWDu4rcIpMUap39YnE95qnEL"
+okta_org_url: "https://dev-42649907.okta.com"
+
+postgres_host: "DB-VM-0"
+postgres_password: "LSM(#Lsa'gfkaposla;a*(%s;lajKGSl"
+postgres_port: 5432
+postgres_username: "idan_db_user"
+
+public_host_name: "fats-and-happy-terraform.westeurope.cloudapp.azure.com"
+
+repository_url: "https://github.com/Idancohen2019/bootcamp-app"
+repository_branch: "master"
+repository_location: "/srv/bootcamp-app"
+
+service_name: "weighttracker_app"
+
+weighttracker_port: 8080

@@ -1,0 +1,22 @@
+[Unit]
+Description=Postgres container
+Requires=docker.service
+#After=network-online.target
+After=docker.service
+
+[Service]
+Restart=always
+RestartSec=10
+ExecStartPre=-/usr/bin/docker stop {{ container_name }}
+ExecStartPre=-/usr/bin/docker rm {{ container_name }}
+ExecStart=/usr/bin/docker run \
+--name weighttracker_postgres \
+--env POSTGRES_PASSWORD=${POSTGRES_PASSWORD} \
+--env POSTGRES_USER=${POSTGRES_USER} \
+--publish 5432:5432 \
+--volume {{ volume_name }}:/var/lib/postgresql/data \
+postgres
+ExecStop=/usr/bin/docker stop {{ container_name }}
+
+[Install]
+WantedBy=multi-user.target

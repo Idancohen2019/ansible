@@ -1,0 +1,4 @@
+---
+- include: copy_code.yaml
+- include: build_image.yaml
+- include: gen_service.yaml

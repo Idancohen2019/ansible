@@ -1,0 +1,4 @@
+---
+
+- include: docker_setup.yaml
+- include: gen_service.yaml

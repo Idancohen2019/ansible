@@ -1,0 +1,9 @@
+---
+# Building the docker image
+
+
+- name: build weighttracker image
+  become: true
+  ansible.builtin.command:
+    chdir: "{{ repository_location }}/"
+    cmd: "/usr/bin/docker build --tag={{ docker_image }} ."
